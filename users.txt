@@ -1,0 +1,4 @@
+_id,user_id,info[0],info[1],info[2],info[3],info[4],info[5],info[6],info[7],info[8]
+669388d959c5bed44b5ab396,1341414,hello,hellsadao,hellq23123o,hello,hellsadao,hellq23123o,hello,hellsadao,hellq23123o
+669389e659c5bed44b5ab456,5034855986,Hello,Fdh,Hi,Say ehat,Say what,What is arigato,,,
+66938a1359c5bed44b5ab47b,1095720356,How to setup firewall on AWS?,Give simple information (without including anything about 🌻),Who is Virat Kohli?,Who is Dhoni?,,,,,
