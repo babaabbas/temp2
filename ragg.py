@@ -6,17 +6,16 @@ import langchain
 sys.path.append('<path_to_langchain_installation>')
 from langchain_community.document_loaders.text import TextLoader
 from scraper import extract_text_from_pdf,get_text_from_url
-from data import extract_info_from_mongodb
 
 
 
 url = 'https://www.forbesindia.com/blog/'
 url2='https://www.forbesindia.com/innovation/1887/1'
 url3='https://www.forbesindia.com/life/92/1'
-path1 = "/Users/abbasbaba/PycharmProjects/hackathon/pd1.pdf"
-path2="/Users/abbasbaba/PycharmProjects/hackathon/pdf2.pdf"
-path3="/Users/abbasbaba/PycharmProjects/hackathon/pdf3.pdf"
-path4="/Users/abbasbaba/PycharmProjects/hackathon/pdf4.pdf"
+path1 = "/home/ubuntu/first_project/simply/pd1.pdf"
+path2="/home/ubuntu/first_project/simply/pdf2.pdf"
+path3="/home/ubuntu/first_project/simply/pdf3.pdf"
+path4="/home/ubuntu/first_project/simply/pdf4.pdf"
 
 text = get_text_from_url(url)+get_text_from_url(url2)+get_text_from_url(url3)+extract_text_from_pdf(path1)+extract_text_from_pdf(path2)+extract_text_from_pdf(path3)+extract_text_from_pdf(path4)
 file_path = "abs.txt"
@@ -24,8 +23,8 @@ with open(file_path, 'w') as file:
     file.write(text)
 
 os.environ["HUGGINGFACEHUB_API_TOKEN"] = "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"
-loader = TextLoader('/Users/abbasbaba/PycharmProjects/hackathon/abs.txt')
-loader2=TextLoader('/Users/abbasbaba/PycharmProjects/hackathon/users.txt')
+loader = TextLoader('/home/ubuntu/first_project/simply/abs.txt')
+loader2=TextLoader('/home/ubuntu/first_project/simply/users.txt')
 documents = loader.load()
 try:
     from langchain.embeddings import HuggingFaceEmbeddings
@@ -67,8 +66,7 @@ print(result)
 
 print(f"Text has been saved to {file_path}")
 def query_answer(user_id,query):
-    context=extract_info_from_mongodb(user_id)
-    data=query+"the following is previous question the user having "+f"user_id"+":"+context
+    data=query
     result = chain.run({"input_documents": docs, "question": data})
     return result
 

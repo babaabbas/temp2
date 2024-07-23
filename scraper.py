@@ -21,7 +21,7 @@ if __name__ == "__main__":
     url = 'https://nmit.ac.in'
     url2='https://www.alkimi.org/tokenomics?section=alkimi-exchange'
     url3='https://www.alkimi.org/tokenomics?section=validators'
-    path1 = "/Users/abbasbaba/PycharmProjects/hackathon/pd1.pdf"
+    path1 = "/home/ubuntu/first_project/simply/pd1.pdf"
     extracted_text = extract_text_from_pdf(path1)
     text = get_text_from_url(url)+get_text_from_url(url2)+get_text_from_url(url3)+extracted_text
     file_path = "abs.txt"
